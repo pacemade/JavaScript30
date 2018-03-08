@@ -21,11 +21,21 @@
   <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
 
   <style>
+  :root {
+    --base: rgb(190, 10, 240);
+    --spacing: 10px;
+    --blur: 10px;
+  }
 
-    /*
-      misc styles, nothing to do with CSS variables
-    */
+  img {
+    padding: var(--spacing);
+    backgroun: var(--base);
+    filter: blur(var(--blur));
+  }
 
+  .h1 {
+    color: var(--base);
+  }
     body {
       text-align: center;
       background: #193549;
