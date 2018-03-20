@@ -32,9 +32,9 @@
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
     function fifteen(person) {
-      return person.year <= 1600;
+      return person.year < 1600 && person.year >= 1500;
     }
-    inventors.filter(fifteen)
+    const thoseInventors = inventors.filter(fifteen)
 
     OR
 
@@ -67,7 +67,7 @@
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
-    
+
     function yearsAlive(sum, person) {
       return sum + (person.passed - person.year);
     }
@@ -85,6 +85,17 @@
     inventors.reduce((accumulator, person) => accumulator + (person.passed - person.year), 0);
 
     // 5. Sort the inventors by years lived
+
+    function yearsLived(person1, person2) {
+      console.log(person1.passed - person1.year);
+      return (person1.passed - person1.year) - (person2.passed - person2.year)
+    }
+
+    inventors.sort(yearsLived);
+
+    OR
+
+    inventors.sort((person1, person2) => (person1.passed - person1.year) - (person2.passed - person2.year));
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
